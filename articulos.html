@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de Maquillaje</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5dc;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background-color: #bb8fce;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      font-size: 20px;
+      color: #bb8fce;
+    }
+    .product p {
+      font-size: 16px;
+      color: #555;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #d8a7a1;
+    }
+
+    .btn {
+      background-color: #bb8fce;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+
+    .btn-carrito {
+      background-color: white;
+      color: #bb8fce;
+      border: 2px solid #bb8fce;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .btn-carrito:hover {
+      transform: scale(1.1);
+      background-color: #f1e9fc;
+    }
+
+    #contenido-carrito {
+      background-color: #e0d4f5;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+      text-align: left;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    #contenido-carrito p {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    #botones-carrito {
+      max-width: 400px;
+      margin: 10px auto 40px auto;
+      text-align: center;
+    }
+    .boton {
+      background-color: #bb8fce;
+      color: white;
+      padding: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .boton:hover {
+      background-color: #debaec;
+      transform: scale(1.1);
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      text-align: center;
+      padding: 15px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      font-size: 20px;
+      color: #bb8fce;
+    }
+    .product p {
+      font-size: 16px;
+      color: #555;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #d8a7a1;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      font-size: 2em;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: lightblue;
+      padding-top: 40px;
+    }
+    .active {
+      display: flex;
+    }
+    .btn {
+      background-color: #ff3366;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="product-container">
+      <a href="index.html" class="btn">Inicio</a>
+      <a href="historia.html" class="btn">Conócenos</a>
+      <a href="maquillaje.html" class="btn">Maquillaje</a>
+      <a href="skinker.html" class="btn">Skincare</a>
+      <a href="fragancias.html" class="btn">Fragancias</a>
+      <a href="secion.html" class="btn">Únete</a>
+      <a href="carritoo.html" class="btn">Carrito</a>
+    </div>
+  </header>
+
+  <div class="product-container">
+    <div class="product">
+      <img src="./index_files/Delineador Dior.jpg" alt="Delineador Dior" />
+      <h3>Delineador Dior</h3>
+      <p>Delineador super práctico y contra el agua.</p>
+      <p class="price">$250.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Delineador Dior', 250)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="./index_files/Paleta de sombras Dior.jpg" alt="Paleta de sombras Dior" />
+      <h3>Paleta de sombras Dior</h3>
+      <p>Naturalidad y estilo todo el día.</p>
+      <p class="price">$250.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Paleta de sombras Dior', 250)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="./index_files/glosdior.jpeg" alt="Gloss Dior" />
+      <h3>Gloss Dior</h3>
+      <p>Brillo irresistible y lujo en cada aplicación.</p>
+      <p class="price">$1500.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Gloss Dior', 1500)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="./index_files/Crema Pond's.jpg" alt="Base de Maquillaje" />
+      <h3>Base de Maquillaje</h3>
+      <p>Cobertura alta para todo tipo de piel.</p>
+      <p class="price">$350.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Base de Maquillaje', 350)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="./index_files/fijador.jpeg" alt="Rimel para pestañas" />
+      <h3>Rimel para pestañas</h3>
+      <p>Duración y frescura todo el día.</p>
+      <p class="price">$65.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Rimel para pestañas', 65)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="./index_files/gelcejas.jpeg" alt="Gel para cejas" />
+      <h3>Gel para cejas</h3>
+      <p>Define y fija tus cejas con estilo.</p>
+      <p class="price">$250.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Gel para cejas', 250)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="./index_files/Rubor bissu.jpg" alt="Rubor Bissu" />
+      <h3>Rubor Bissu</h3>
+      <p>Color radiante y natural.</p>
+      <p class="price">$65.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Rubor Bissu', 65)">🛒</button>
+    </div>
+  </div>
+
+  <div id="contenido-carrito"></div>
+
+  <div id="botones-carrito">
+    <button class="btn" id="btnPagar">Pagar</button>
+    <button class="btn" id="btnBorrar">Borrar</button>
+  </div>
+
+  <script>
+    window.onload = function () {
+      mostrarCarrito();
+    };
+
+    function agregarAlCarrito(nombre, precio) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      mostrarCarrito();
+      alert(`${nombre} ha sido agregado al carrito.`);
+    }
+
+    function mostrarCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const contenedor = document.getElementById('contenido-carrito');
+      contenedor.innerHTML = ''; // limpiar contenido antes de mostrar
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = '<p>Tu carrito está vacío.</p>';
+      } else {
+        let total = 0;
+        carrito.forEach(producto => {
+          const p = document.createElement('p');
+          p.textContent = `${producto.nombre} - $${producto.precio}`;
+          contenedor.appendChild(p);
+          total += producto.precio;
+        });
+        const totalP = document.createElement('p');
+        totalP.innerHTML = `<strong>Total: $${total}</strong>`;
+        contenedor.appendChild(totalP);
+      }
+    }
+
+    // Botón Pagar: redirige a la página de pago
+    document.getElementById('btnPagar').addEventListener('click', function () {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      if (carrito.length === 0) {
+        alert('El carrito está vacío. Agrega productos antes de pagar.');
+      } else {
+        window.location.href = 'pago.html';
+      }
+    });
+
+    // Botón Borrar: limpia el carrito
+    document.getElementById('btnBorrar').addEventListener('click', function () {
+      if (confirm('¿Seguro que quieres borrar todos los productos del carrito?')) {
+        localStorage.removeItem('carrito');
+        mostrarCarrito();
+      }
+    });
+  </script>
+</body>
+</html>
